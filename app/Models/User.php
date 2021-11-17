@@ -37,4 +37,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    /**
+     * Get the user that owns the phone.
+     */
+    public function phone()
+    {
+        return $this->hasOne(Phone::class);
+    }
 }
